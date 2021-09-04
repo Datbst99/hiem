@@ -22,19 +22,56 @@
             width: 100%;
             height: 400px;
         }
+        .custom-hi {
+            border: 1px solid #000;
+            box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.04);
+            border-radius: 10px;
+            padding: 30px;
+        }
+
+        .font-cus-tit {
+            font-size: 20px;
+
+        }
+        .form-2 {
+            display: none;
+        }
     </style>
     <script>
         $(document).ready(function(){
             $('.item-do').click(function(){
                 alert('Hãy gửi ID cho anh! Rồi em sẽ có nó thôi tinh yêu ạ')
             })
+            $('.click-showJs').click(function(){
+                var eat = $('.eat').val();
+                if(eat == 'ăn em' || eat == 'Ăn em') {
+                    $('.form-2').css('display', 'block')
+                    $('.form-1').css('display', 'none');
+                } else {
+                    alert('Hi! Sai rồi nhập lại đi em yêu')
+                }
+            })
         });
+
     </script>
 </head>
 <body>
-    <div class="wraaper container">
-        <h1 class="text-center">Chúc mừng em đã trả lời đúng</h1>
-
+   
+    <div class="form-1 container custom-hi">
+        <h1 class="text-center text-danger">Hi em yêu!</h1>
+        <p class="text-center font-cus-tit">Trả lời đúng có thưởng nè</p>
+        <div>
+            <form>
+                <div class="form-group">
+                    <label for="">Anh yêu của em thích ăn gì nhất</label>
+                    <input type="text" name="eat" class="form-control eat" placeholder="Nhập vào đây" required>
+                </div>
+                <input type="button" name="btn_eat" class="btn btn-success click-showJs" value="Xác nhận">
+            </form>
+        </div>
+    </div>
+    <div class="form-2 container">
+        <h1 class="text-center">Chúc mừng em đã chọn đúng</h1>
         <p class="text-center">Xin mời em chọn 1 món quà em thích</p>
         <div class="box-do">
             <div class="item-do">
